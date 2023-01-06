@@ -27,8 +27,11 @@ class H5History extends Base {
   push(location) {
     return this.transitionTo(location, () => {
       // 修改路由
-      history.pushState({},'',location)
+      window.history.pushState({},'',location)
     })
+  }
+  go (n) {
+    window.history.go(n)
   }
 }
 

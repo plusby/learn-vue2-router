@@ -46,6 +46,17 @@ class VueRouter {
   beforeEach (cb) {
     this.beforeEachHooks.push(cb)
   }
+  go (n) {
+    this.history.go(n)
+  }
+
+  back () {
+    this.go(-1)
+  }
+
+  forward () {
+    this.go(1)
+  }
 }
 // 实现install函数
 VueRouter.install = install
@@ -99,4 +110,6 @@ export default VueRouter
  *     此时就会重新渲染router-view函数组件；并且如果是hash就直接改变window.location.hash来修改路由，是history就通过
  *     pushState方法修改路由
  *  3. 执行push等修改路由的方法和第二部是一样的操作
+ * 
+ * 
  */

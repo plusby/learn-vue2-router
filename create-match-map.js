@@ -8,7 +8,7 @@ export default function createRouteMap (routes) {
 }
 
 function addRouteRecord (route, pathMap, parentRecord) {
-  let path = parentRecord ? `${parentRecord.path === '/' ? '/' : parentRecord.path + '/'}` : parentRecord.path
+  let path = parentRecord ? `${parentRecord.path === '/' ? '/' : parentRecord.path + '/'}` : '/'
   let record = {
     ...route,
     parent: parentRecord,

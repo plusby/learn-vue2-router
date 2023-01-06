@@ -14,7 +14,7 @@ export default function install (_Vue) {
         // 把当前的路由实例存储到当前实例的属性上
         this._router = this.$options.router
         // 进行初始化
-        this._router.init()
+        this._router.init(Vue)
         // 把当前的路由信息存储到route上  响应式定义_route属性，保证_route发生变化时，组件(router-view)会重新渲染
         Vue.util.defineReactive(this, '_route', this._router.history.current)
       } else { // 子级
